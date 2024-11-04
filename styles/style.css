@@ -6,56 +6,169 @@
   --highlight-color: #f440c5;
 }
 
+/* General Body Styling */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: var(--primary-background);
+  background-color: #fff;
   color: var(--primary-text);
 }
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
+/* Header and Footer Styling */
+header,
+footer {
   background-color: #fff;
+  padding: 1rem;
+  text-align: center;
 }
 
-header .logo {
-  max-width: 120px;
+/* Logo Section */
+.logo-section {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  width: 100%; /* Make the logo take up the full width */
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  header,
+  footer {
+    padding: 0.5rem;
+  }
+
+  .header-details {
+    font-size: 1rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-content p,
+  .footer-content a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Header Details */
+.header-details {
+  color: var(--highlight-color);
+  font-family: "Pacifico", cursive;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Navigation Bar */
+header nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 }
 
 header nav a {
   color: var(--menu-text);
-  margin: 0 1rem;
   text-decoration: none;
+  font-weight: bold;
 }
 
-.intro {
+/* Content Wrapper */
+.content-wrapper {
+  background-color: var(--primary-background);
   padding: 2rem;
-  text-align: center;
-  color: var(--primary-text);
+  margin: 0 auto;
+  border-radius: 10px;
+  width: 80%;
 }
 
-.intro h2 {
-  font-size: 2rem; /* Smaller than before for better readability */
-  font-family: "Pacifico", cursive; /* More playful font */
-  color: var(--highlight-color); /* Keep the pink color */
-  margin-bottom: 0.5rem;
+@media (max-width: 768px) {
+  .content-wrapper {
+    width: 90%;
+  }
+}
+
+/* Centering Section Titles (h2) */
+h2 {
+  font-size: 2rem;
+  font-family: "Pacifico", cursive;
+  color: var(--highlight-color);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+  text-align: center; /* Center-align the h2 */
   animation: fadeInZoom 1s ease-in-out;
 }
 
-/* Subtitle style */
-.intro h3 {
-  font-size: 1.3rem;
-  font-family: "Poppins", sans-serif; /* A modern look for contrast */
-  color: #333;
-  font-style: italic;
+.greetings h2 {
+  color: var(--menu-text);
+}
+
+/* Paragraph Text Styling */
+.intro p,
+.greetings p,
+.benefits p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2em;
+  line-height: 1.7;
+  color: var(--primary-text);
+  margin: 2em auto;
+  text-align: center;
+}
+
+/* Benefits List Styling */
+.benefits-list {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2em;
+  line-height: 1.7;
+  color: var(--primary-text);
+  margin: 2em auto;
+  text-align: left; /* Align text to the left for readability */
+  max-width: 600px; /* Center the list by limiting its width */
+  padding-left: 1em; /* Add padding to indent list items */
+}
+
+/* Image Container Styling */
+.image-container {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Image Styling with Aspect Ratio */
+.image-container img {
+  width: 33.333%;
+  aspect-ratio: 4 / 3;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    flex-direction: column;
+  }
+
+  .image-container img {
+    width: 100%;
+  }
+}
+
+/* Footer Content Styling */
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact-info,
+.social-media {
   margin-bottom: 1rem;
-  opacity: 0.8;
 }
 
 /* Animation for h2 */
@@ -68,77 +181,4 @@ header nav a {
     opacity: 1;
     transform: scale(1);
   }
-}
-
-.intro p {
-  font-size: 1rem;
-  line-height: 1.5;
-  max-width: 600px;
-  margin: 0 auto 1.5rem;
-}
-
-.intro-images {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.intro-images img {
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.features {
-  padding: 2rem;
-  background-color: #fff;
-  text-align: center;
-}
-
-.features h2 {
-  font-size: 1.8rem;
-  color: #1f519d;
-  margin-bottom: 1rem;
-}
-
-.features ul {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.features li {
-  margin-bottom: 0.5rem;
-}
-
-footer {
-  background-color: var(--footer-background);
-  padding: 2rem;
-  text-align: center;
-  color: var(--menu-text);
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.contact-info,
-.social-media,
-.booking {
-  margin-bottom: 1rem;
-}
-
-.book-button {
-  padding: 0.5rem 1rem;
-  background-color: var(--highlight-color);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
 }
