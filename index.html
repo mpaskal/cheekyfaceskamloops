@@ -13,6 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link rel="stylesheet" href="styles/style.css" />
+    <script src="scripts/script.js" defer></script>
   </head>
   <body>
     <header>
@@ -27,8 +28,8 @@
         </p>
       </div>
       <nav>
-        <a href="quote.html">Get a Quote</a>
-        <a href="booking.html">Book Now</a>
+        <a href="#" id="getQuoteButton">Get a Quote</a>
+        <a href="booking.html">Booking Request</a>
         <a href="pages/faq.html">FAQ</a>
         <a href="pages/review.html">Reviews</a>
       </nav>
@@ -106,8 +107,6 @@
         </div>
       </section>
     </main>
-
-    \
     <footer>
       <div class="footer-content">
         <div class="contact-info">
@@ -120,23 +119,53 @@
           <p class="footer-title">Follow Us</p>
           <p>
             <i class="fab fa-facebook-f"></i>
-            <a href="#">Facebook</a>
+            <a
+              href="https://www.facebook.com/cheekyfaceskamloops?mibextid=LQQJ4d"
+              >Facebook</a
+            >
           </p>
           <p>
             <i class="fab fa-instagram"></i>
-            <a href="#">Instagram</a>
+            <a
+              href="https://www.instagram.com/cheekyfaceskamloops/profilecard/?igsh=OWFteWplYXRjbmp6 "
+              >Instagram</a
+            >
           </p>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 Cheeky Faces. All rights reserved.</p>
+        <p class="copyright"></p>
         <p>
           Website built by
           <a href="https://livenlab.com" target="_blank">LivenLab</a>
         </p>
       </div>
     </footer>
+    <!-- Get a Quote Modal -->
+    <div id="quoteModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeButton">&times;</span>
+        <h2>Get a Quote</h2>
+        <form id="quoteForm">
+          <!-- Input Fields for the quote calculation -->
+          <label for="faces">Number of Faces:</label>
+          <input type="number" id="faces" name="faces" required />
 
-    <script src="script.js"></script>
+          <label for="hours">Event Duration (Hours):</label>
+          <input type="number" id="hours" name="hours" required />
+
+          <!-- Output Field -->
+          <label for="quote">Estimated Quote:</label>
+          <input type="text" id="quote" name="quote" readonly />
+
+          <!-- Buttons -->
+          <div class="modal-buttons">
+            <button type="button" id="clearButton">Reset</button>
+            <button type="button" id="calculateButton">Calculate</button>
+            <button type="button" id="closeButton">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
