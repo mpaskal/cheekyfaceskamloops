@@ -30,29 +30,9 @@ footer {
 }
 
 .logo {
-  width: 100%; /* Make the logo take up the full width */
+  width: 100%;
   max-width: 100%;
   height: auto;
-}
-
-@media (max-width: 768px) {
-  header,
-  footer {
-    padding: 0.5rem;
-  }
-
-  .header-details {
-    font-size: 1rem;
-  }
-
-  .footer-content {
-    flex-direction: column;
-  }
-
-  .footer-content p,
-  .footer-content a {
-    font-size: 0.9rem;
-  }
 }
 
 /* Header Details */
@@ -76,13 +56,13 @@ header nav a {
   font-weight: bold;
   padding: 0.5rem 1rem;
   border-radius: 5px;
-  background-color: rgba(75, 81, 162, 0.1); /* Slightly different background */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  background-color: rgba(75, 81, 162, 0.1);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 header nav a:hover {
-  background-color: var(--menu-text); /* Changes background color on hover */
-  color: #fff; /* Changes text color to white on hover */
+  background-color: var(--menu-text);
+  color: #fff;
 }
 
 /* Content Wrapper */
@@ -91,12 +71,6 @@ header nav a:hover {
   padding: 2rem;
   margin: 0 auto;
   width: 80%;
-}
-
-@media (max-width: 768px) {
-  .content-wrapper {
-    width: 90%;
-  }
 }
 
 /* Centering Section Titles (h2) */
@@ -145,9 +119,9 @@ h2 {
   line-height: 1.7;
   color: var(--primary-text);
   margin: 2em auto;
-  text-align: left; /* Align text to the left for readability */
-  max-width: 600px; /* Center the list by limiting its width */
-  padding-left: 1em; /* Add padding to indent list items */
+  text-align: left;
+  max-width: 600px;
+  padding-left: 1em;
 }
 
 /* Image Container Styling */
@@ -166,16 +140,6 @@ h2 {
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 768px) {
-  .image-container {
-    flex-direction: column;
-  }
-
-  .image-container img {
-    width: 100%;
-  }
 }
 
 /* Footer Content Styling */
@@ -248,12 +212,38 @@ footer {
 
 /* Responsive Layout for Smaller Screens */
 @media (max-width: 768px) {
+  .content-wrapper {
+    width: 90%;
+  }
+
+  header,
+  footer {
+    padding: 0.5rem;
+  }
+
+  .header-details {
+    font-size: 1rem;
+  }
+
   .footer-content {
     flex-direction: column;
     align-items: center;
   }
 
+  .footer-content p,
+  .footer-content a {
+    font-size: 0.9rem;
+  }
+
   .footer-bottom {
     flex-direction: column;
+  }
+
+  .image-container {
+    flex-direction: column;
+  }
+
+  .image-container img {
+    width: 100%;
   }
 }
