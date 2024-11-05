@@ -74,6 +74,15 @@ header nav a {
   color: var(--menu-text);
   text-decoration: none;
   font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: rgba(75, 81, 162, 0.1); /* Slightly different background */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+header nav a:hover {
+  background-color: var(--menu-text); /* Changes background color on hover */
+  color: #fff; /* Changes text color to white on hover */
 }
 
 /* Content Wrapper */
@@ -103,6 +112,18 @@ h2 {
 
 .greetings h2 {
   color: var(--menu-text);
+}
+
+/* Animation for h2 */
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Paragraph Text Styling */
@@ -158,26 +179,81 @@ h2 {
 }
 
 /* Footer Content Styling */
+footer {
+  background-color: #fff;
+  color: var(--menu-text);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
 .footer-content {
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  align-items: start;
+  padding-bottom: 1rem;
 }
 
 .contact-info,
 .social-media {
-  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: left;
+  padding: 0 1rem;
 }
 
-/* Animation for h2 */
-@keyframes fadeInZoom {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
+.footer-title {
+  font-weight: bold;
+  color: var(--menu-text);
+  margin-bottom: 0.5rem;
+}
+
+.contact-info p,
+.social-media p {
+  display: flex;
+  align-items: center;
+  margin: 0.3rem 0;
+  font-weight: normal;
+  color: var(--primary-text);
+}
+
+.contact-info span,
+.social-media i {
+  margin-right: 0.5rem;
+}
+
+.social-media i {
+  color: var(--menu-text);
+  font-size: 1.2rem;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--menu-text);
+  font-size: 0.9rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom a {
+  color: var(--menu-text);
+  text-decoration: none;
+}
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
   }
-  100% {
-    opacity: 1;
-    transform: scale(1);
+
+  .footer-bottom {
+    flex-direction: column;
   }
 }
