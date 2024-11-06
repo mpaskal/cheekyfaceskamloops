@@ -142,21 +142,48 @@
       </div>
     </footer>
     <!-- Get a Quote Modal -->
+    <!-- Get a Quote Modal -->
     <div id="quoteModal" class="modal">
       <div class="modal-content">
         <span class="close-btn" id="closeButton">&times;</span>
         <h2>Get a Quote</h2>
         <form id="quoteForm">
-          <!-- Input Fields for the quote calculation -->
-          <label for="faces">Number of Faces:</label>
-          <input type="number" id="faces" name="faces" required />
+          <!-- Event Type Dropdown -->
+          <label for="eventType">Type of Event:</label>
+          <select id="eventType" name="eventType">
+            <option value="birthday">Birthday Party</option>
+            <option value="event">Other Events</option>
+          </select>
 
-          <label for="hours">Event Duration (Hours):</label>
-          <input type="number" id="hours" name="hours" required />
+          <!-- Fields for Birthday Party -->
+          <div id="facesField">
+            <label for="faces">Number of Faces:</label>
+            <input type="number" id="faces" name="faces" min="1" required />
+          </div>
+
+          <!-- Fields for Other Events -->
+          <div id="durationField" style="display: none">
+            <label for="hours">Event Duration (Hours):</label>
+            <input type="number" id="hours" name="hours" min="1" required />
+          </div>
+
+          <!-- Travel Fee Dropdown -->
+          <label for="travelFee">Travel Fee:</label>
+          <select id="travelFee" name="travelFee">
+            <option value="0">$0</option>
+            <option value="10">$10</option>
+          </select>
 
           <!-- Output Field -->
           <label for="quote">Estimated Quote:</label>
           <input type="text" id="quote" name="quote" readonly />
+
+          <!-- Info Text -->
+          <p class="quote-info">
+            Tax included. The final price may vary depending on additional
+            details and conditions that can be discussed during booking the
+            service. Please, do not hesitate to contact us anytime.
+          </p>
 
           <!-- Buttons -->
           <div class="modal-buttons">
