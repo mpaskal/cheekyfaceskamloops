@@ -1,63 +1,66 @@
 // DOM Elements
 const copyright = document.querySelector(".copyright");
-
-// DOM Elements for Quote Modal
-const quoteModal = document.getElementById("quoteModal");
 const getQuoteButton = document.getElementById("getQuoteButton");
+const quoteModal = document.getElementById("quoteModal");
 const closeButton = document.getElementById("closeButton");
 const clearButton = document.getElementById("clearButton");
 const calculateButton = document.getElementById("calculateButton");
-
-// Form elements in the Quote Modal
 const eventTypeSelect = document.getElementById("eventType");
+const facesField = document.getElementById("facesField");
+const durationField = document.getElementById("durationField");
 const travelFeeSelect = document.getElementById("travelFee");
 const quoteOutput = document.getElementById("quote");
 
-// Event-based fields
-const facesField = document.getElementById("facesField");
-const durationField = document.getElementById("durationField");
-
-// Show Modal and load saved data if available
+// Show modal when "Get a Quote" button is clicked
 getQuoteButton.addEventListener("click", (event) => {
   event.preventDefault();
-  loadQuoteData(); // Load previously saved data if any
   quoteModal.style.display = "block";
+  loadQuoteData(); // Load saved data if available
 });
 
-// Close Modal
+// Close modal when the close button is clicked
 closeButton.addEventListener("click", () => {
-  quoteModal.style.display = "none";
+  closeModal("quoteModal");
 });
 
-// Close Modal when clicking outside
-// window.addEventListener("click", (event) => {
-//   if (event.target === quoteModal) {
-//     quoteModal.style.display = "none";
-//   }
-// });
+// Function to close modal
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = "none";
+}
 
-// Clear all fields
+// Close modal when clicking outside of the modal content
+window.addEventListener("click", (event) => {
+  if (event.target === quoteModal) {
+    closeModal("quoteModal");
+  }
+});
+
+// Clear form fields
 clearButton.addEventListener("click", () => {
-  eventTypeSelect.value = "birthday"; // Reset to default
+  eventTypeSelect.value = "birthday";
+  facesField.style.display = "block";
+  durationField.style.display = "none";
   travelFeeSelect.value = "0";
-  facesField.style.display = "block"; // Show faces field by default
-  durationField.style.display = "none"; // Hide duration field by default
   quoteOutput.value = "";
   localStorage.removeItem("quoteData");
 });
 
-// Update fields based on event type selection
+// Update field visibility based on event type selection
 eventTypeSelect.addEventListener("change", () => {
-  if (eventTypeSelect.value === "birthday") {
+  updateFieldsVisibility(eventTypeSelect.value);
+});
+
+function updateFieldsVisibility(eventType) {
+  if (eventType === "birthday") {
     facesField.style.display = "block";
     durationField.style.display = "none";
   } else {
     facesField.style.display = "none";
     durationField.style.display = "block";
   }
-});
+}
 
-// Calculate Quote
+// Calculate quote when calculate button is clicked
 calculateButton.addEventListener("click", () => {
   let quote = 0;
   const travelFee = parseInt(travelFeeSelect.value);
@@ -70,11 +73,10 @@ calculateButton.addEventListener("click", () => {
     quote = hours * 100;
   }
 
-  // Add travel fee
   quote += travelFee;
   quoteOutput.value = `$${quote.toFixed(2)}`;
 
-  // Save data to localStorage
+  // Save data
   const quoteData = {
     eventType: eventTypeSelect.value,
     travelFee,
@@ -83,30 +85,24 @@ calculateButton.addEventListener("click", () => {
   localStorage.setItem("quoteData", JSON.stringify(quoteData));
 });
 
-// Load saved data for Quote Modal
+// Load saved quote data from localStorage
 function loadQuoteData() {
   const savedData = JSON.parse(localStorage.getItem("quoteData"));
   if (savedData) {
     eventTypeSelect.value = savedData.eventType;
     travelFeeSelect.value = savedData.travelFee;
     quoteOutput.value = `$${savedData.quote.toFixed(2)}`;
-
-    // Show relevant fields based on saved event type
-    if (savedData.eventType === "birthday") {
-      facesField.style.display = "block";
-      durationField.style.display = "none";
-    } else {
-      facesField.style.display = "none";
-      durationField.style.display = "block";
-    }
+    updateFieldsVisibility(savedData.eventType);
   }
 }
 
+// Update copyright year
 function updateCopyright() {
   const currentYear = new Date().getFullYear();
   copyright.innerHTML = `${currentYear} Cheeky Faces. All rights reserved.`;
 }
 
+// Initial setup
 (function () {
   updateCopyright();
 })();

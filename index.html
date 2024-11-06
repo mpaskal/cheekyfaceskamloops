@@ -145,51 +145,63 @@
     <!-- Get a Quote Modal -->
     <div id="quoteModal" class="modal">
       <div class="modal-content">
-        <span class="close-btn" id="closeButton">&times;</span>
+        <!-- Close button on top-right -->
+        <span
+          class="close-btn"
+          id="closeButton"
+          onclick="closeModal('quoteModal')"
+          >&times;</span
+        >
         <h2>Get a Quote</h2>
         <form id="quoteForm">
-          <!-- Event Type Dropdown -->
+          <!-- Type of Event Field -->
           <label for="eventType">Type of Event:</label>
-          <select id="eventType" name="eventType">
+          <select id="eventType" name="eventType" required>
             <option value="birthday">Birthday Party</option>
-            <option value="event">Other Events</option>
+            <option value="other">Other Events</option>
           </select>
+          <p class="help-text">
+            Select the type of event you are interested in.
+          </p>
 
-          <!-- Fields for Birthday Party -->
-          <div id="facesField">
-            <label for="faces">Number of Faces:</label>
-            <input type="number" id="faces" name="faces" min="1" required />
-          </div>
+          <!-- Event Duration Field -->
+          <label for="hours">Event Duration (Hours):</label>
+          <input type="number" id="hours" name="hours" min="1" required />
+          <p class="help-text">Specify the duration of the event in hours.</p>
 
-          <!-- Fields for Other Events -->
-          <div id="durationField" style="display: none">
-            <label for="hours">Event Duration (Hours):</label>
-            <input type="number" id="hours" name="hours" min="1" required />
-          </div>
-
-          <!-- Travel Fee Dropdown -->
+          <!-- Travel Fee Field -->
           <label for="travelFee">Travel Fee:</label>
           <select id="travelFee" name="travelFee">
             <option value="0">$0</option>
             <option value="10">$10</option>
           </select>
+          <p class="help-text">
+            Add $10 if your location is in certain areas (see FAQs for details).
+          </p>
 
-          <!-- Output Field -->
-          <label for="quote">Estimated Quote:</label>
-          <input type="text" id="quote" name="quote" readonly />
+          <!-- Estimated Quote -->
+          <div class="quote-row">
+            <label for="quote">Estimated Quote:</label>
+            <input type="text" id="quote" name="quote" readonly />
+          </div>
 
-          <!-- Info Text -->
-          <p class="quote-info">
+          <p class="disclaimer">
             Tax included. The final price may vary depending on additional
-            details and conditions that can be discussed during booking the
-            service. Please, do not hesitate to contact us anytime.
+            details and conditions that can be discussed during booking. Please
+            feel free to contact us anytime.
           </p>
 
           <!-- Buttons -->
           <div class="modal-buttons">
             <button type="button" id="clearButton">Reset</button>
             <button type="button" id="calculateButton">Calculate</button>
-            <button type="button" id="closeButton">Close</button>
+            <button
+              type="button"
+              id="closeButton"
+              onclick="closeModal('quoteModal')"
+            >
+              Close
+            </button>
           </div>
         </form>
       </div>
