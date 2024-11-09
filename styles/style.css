@@ -7,12 +7,19 @@
 }
 
 /* General Body Styling */
+html,
 body {
-  margin: 0;
-  padding: 0;
   font-family: "Poppins", sans-serif;
   background-color: #fff;
   color: var(--primary-text);
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Header and Footer Styling */
@@ -21,6 +28,7 @@ footer {
   background-color: #fff;
   padding: 1rem;
   text-align: center;
+  width: 100%;
 }
 
 /* Logo Section */
@@ -46,15 +54,17 @@ footer {
 /* Navigation Bar */
 header nav {
   display: flex;
-  gap: 1rem;
+  gap: 1em;
   justify-content: center;
 }
 
 header nav a {
+  align-items: center;
   color: var(--menu-text);
+  display: flex;
   text-decoration: none;
   font-weight: bold;
-  padding: 0.5rem 1rem;
+  padding: 0.5em 0.5em;
   border-radius: 5px;
   background-color: rgba(75, 81, 162, 0.1);
   transition: background-color 0.3s, color 0.3s;
@@ -193,7 +203,7 @@ footer {
 /* Footer Bottom Section */
 .footer-bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding-top: 1rem;
   border-top: 1px solid var(--menu-text);
@@ -211,13 +221,14 @@ footer {
 
 /* Responsive Layout for Smaller Screens */
 @media (max-width: 768px) {
-  .content-wrapper {
-    width: 90%;
-  }
-
   header,
   footer {
     padding: 0.5rem;
+  }
+
+  header nav {
+    gap: 0.2em;
+    padding: 0 0.1em;
   }
 
   .header-details {
@@ -236,6 +247,13 @@ footer {
 
   .footer-bottom {
     flex-direction: column;
+  }
+
+  .content-wrapper {
+    background-color: var(--primary-background);
+    padding: 1em;
+    margin: 0 auto;
+    width: 82%;
   }
 
   .image-container {
