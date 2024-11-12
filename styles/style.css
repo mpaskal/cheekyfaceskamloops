@@ -288,6 +288,11 @@ footer {
   color: var(--primary-text);
 }
 
+.modal .field-details {
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
 /* Close Button Styling - Top Right */
 .close-btn {
   float: right;
