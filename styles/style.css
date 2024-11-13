@@ -316,7 +316,7 @@ footer {
   color: var(--highlight-color);
   font-family: "Pacifico", cursive;
   text-align: center;
-  margin-bottom: 1rem;
+  margin: 0.5em 1em;
 }
 
 /* Label Styling */
@@ -337,8 +337,8 @@ label {
 #quoteForm input,
 #quoteForm select {
   width: calc(100% - 20px);
-  padding: 0.5rem;
-  margin-bottom: 1rem;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
   border-radius: 4px;
   border: 1px solid #ddd;
   color: var(--menu-text);
