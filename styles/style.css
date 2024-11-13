@@ -291,13 +291,24 @@ footer {
 .modal .field-details {
   font-size: 0.8em;
   font-weight: 500;
+  color: var(--highlight-color);
 }
 
-/* Close Button Styling - Top Right */
+.modal label {
+  color: var(--highlight-color);
+}
+
+/* Close Button Styling */
 .close-btn {
   float: right;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+/* Close Button Styling - Top Right */
+#closeButtonTop {
+  color: var(--menu-text);
+  font-weight: 600;
 }
 
 /* Modal Title Styling */
@@ -330,6 +341,7 @@ label {
   margin-bottom: 1rem;
   border-radius: 4px;
   border: 1px solid #ddd;
+  color: var(--menu-text);
 }
 
 /* Estimated Quote Row */
