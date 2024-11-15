@@ -1,0 +1,392 @@
+:root {
+  --primary-background: #f5f5f5;
+  --footer-background: #d8e0e9;
+  --primary-text: #333;
+  --menu-text: #4b51a2;
+  --highlight-color: #f440c5;
+}
+
+/* General Body Styling */
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: var(--primary-text);
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header and Footer Styling */
+header,
+footer {
+  background-color: #fff;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+/* Logo Section */
+.logo-section {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header Details */
+.header-details {
+  color: var(--highlight-color);
+  font-family: "Pacifico", cursive;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Navigation Bar */
+header nav {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+}
+
+header nav a {
+  align-items: center;
+  color: var(--menu-text);
+  display: flex;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5em 0.5em;
+  border-radius: 5px;
+  background-color: rgba(75, 81, 162, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header nav a:hover {
+  background-color: var(--menu-text);
+  color: #fff;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  background-color: var(--primary-background);
+  padding: 2rem;
+  margin: 0 auto;
+  width: 60%;
+}
+
+/* Centering Section Titles (h2) */
+h2 {
+  font-size: 2rem;
+  font-family: "Pacifico", cursive;
+  color: var(--highlight-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.75rem;
+  text-align: center; /* Center-align the h2 */
+  animation: fadeInZoom 1s ease-in-out;
+}
+
+.greetings h2 {
+  color: var(--menu-text);
+}
+
+/* Animation for h2 */
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Paragraph Text Styling */
+.intro p,
+.greetings p,
+.benefits p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2em;
+  line-height: 1.7;
+  color: var(--primary-text);
+  margin: 2em auto;
+  text-align: center;
+}
+
+/* Benefits List Styling */
+.benefits-list {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2em;
+  line-height: 1.7;
+  color: var(--primary-text);
+  margin: 2em auto;
+  text-align: left;
+  max-width: 600px;
+  padding-left: 1em;
+}
+
+/* Image Container Styling */
+.image-container {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Image Styling with Aspect Ratio */
+.image-container img {
+  width: 33.333%;
+  aspect-ratio: 4 / 3;
+  max-width: 100%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Content Styling */
+footer {
+  background-color: #fff;
+  color: var(--menu-text);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  padding-bottom: 1rem;
+}
+
+.contact-info,
+.social-media {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: left;
+  padding: 0 1rem;
+}
+
+.footer-title {
+  font-weight: bold;
+  color: var(--menu-text);
+  margin-bottom: 0.5rem;
+}
+
+.contact-info p,
+.social-media p {
+  display: flex;
+  align-items: center;
+  margin: 0.3rem 0;
+  font-weight: normal;
+  color: var(--primary-text);
+}
+
+.contact-info span,
+.social-media i {
+  margin-right: 0.5rem;
+}
+
+.social-media i {
+  color: var(--menu-text);
+  font-size: 1.2rem;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--menu-text);
+  font-size: 0.9rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom a {
+  color: var(--menu-text);
+  text-decoration: none;
+}
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 768px) {
+  header,
+  footer {
+    padding: 0.5rem;
+  }
+
+  header nav {
+    gap: 0.2em;
+    padding: 0 0.1em;
+  }
+
+  .header-details {
+    font-size: 1rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-content p,
+  .footer-content a {
+    font-size: 0.9rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+
+  .content-wrapper {
+    background-color: var(--primary-background);
+    padding: 1em;
+    margin: 0 auto;
+    width: 82%;
+  }
+
+  .image-container {
+    flex-direction: column;
+  }
+
+  .image-container img {
+    width: 100%;
+  }
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: auto;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  color: var(--primary-text);
+}
+
+.modal .field-details {
+  font-size: 0.8em;
+  font-weight: 500;
+  color: var(--highlight-color);
+}
+
+.modal label {
+  color: var(--highlight-color);
+}
+
+/* Close Button Styling */
+.close-btn {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Close Button Styling - Top Right */
+#closeButtonTop {
+  color: var(--menu-text);
+  font-weight: 600;
+}
+
+/* Modal Title Styling */
+.modal-content h2 {
+  color: var(--highlight-color);
+  font-family: "Pacifico", cursive;
+  text-align: center;
+  margin: 0.5em 1em;
+}
+
+/* Label Styling */
+label {
+  font-weight: bold;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.help-text {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+/* Input Field Styling */
+#quoteForm input,
+#quoteForm select {
+  width: calc(100% - 20px);
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  color: var(--menu-text);
+}
+
+/* Estimated Quote Row */
+.quote-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+.quote-row label {
+  font-weight: bold;
+}
+
+/* Disclaimer Text Styling */
+.disclaimer {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 1rem;
+}
+
+/* Modal Buttons Styling */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.modal-buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  color: var(--menu-text);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: rgba(75, 81, 162, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 4px;
+  font-family: "Poppins", sans-serif;
+  transition: background-color 0.3s;
+}
+
+.modal-buttons button:hover {
+  background-color: var(--menu-text);
+  color: #fff;
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -87,3 +88,216 @@
     </main>
 </body>
 </html>
+=======
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cheeky Faces</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="scripts/script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo-section">
+        <img
+          src="assets/images/logo2.jpg"
+          alt="Cheeky Faces Logo"
+          class="logo"
+        />
+        <p class="header-details">
+          Face Painting for Parties and Events in Kamloops & Surrounding Areas
+        </p>
+      </div>
+      <nav>
+        <a href="#" id="getQuoteButton">Get a Quote</a>
+        <a href="booking.html">Booking Request</a>
+        <a href="pages/faq.html">FAQ</a>
+        <a href="pages/review.html">Reviews</a>
+      </nav>
+    </header>
+    <main class="content-wrapper">
+      <section class="intro">
+        <div class="intro-text">
+          <h2>Where Imagination Meets Art</h2>
+          <div class="image-container">
+            <img src="assets/images/work16.jpg" alt="Face painting example1" />
+            <img src="assets/images/work25.jpg" alt="Face painting example2" />
+            <img src="assets/images/work28.jpg" alt="Face painting example3" />
+          </div>
+          <p>
+            Transform your event into a vibrant celebration with our
+            professional face painting services. Serving Kamloops and
+            surrounding areas, we create unique and dazzling designs that
+            captivate guests of all ages. Whether it’s a birthday party or a
+            corporate event, let us add a touch of magic to make your occasion
+            truly unforgettable.
+          </p>
+        </div>
+      </section>
+
+      <!-- Greetings Section -->
+      <section class="greetings">
+        <h2>Greetings!!!</h2>
+        <div class="image-container">
+          <img src="assets/images/work3.jpg" alt="Face painting example4" />
+          <img src="assets/images/myFamily1.jpg" alt="Sonya's family" />
+          <img src="assets/images/work10.jpg" alt="Face painting example5" />
+        </div>
+        <p class="greetings-text">
+          Hello! I'm Sonya, a Kamloops local of 13 years, proud mom of two
+          little girls, and passionate face painter. Inspired by my children’s
+          creativity and curiosity, I started this business to bring joy and
+          imagination to families in our community...
+        </p>
+      </section>
+
+      <!-- Benefits Section -->
+      <section class="benefits">
+        <h2>Why do face painting at a party?</h2>
+        <div class="image-container">
+          <img src="assets/images/work21.jpg" alt="Face painting example6" />
+          <img src="assets/images/work24.jpg" alt="Face painting example7" />
+          <img src="assets/images/work27.jpg" alt="Face painting example8" />
+        </div>
+        <ul class="benefits-list">
+          <li>
+            Unique Entertainment: Face painting offers an interactive and
+            engaging experience for guests.
+          </li>
+          <li>
+            Photo Opportunities: Colorful designs make for amazing photos to
+            remember the special day.
+          </li>
+          <li>
+            Delights Kids and Adults: Face painting brings out the inner child
+            in everyone.
+          </li>
+          <li>Customizable: Designs can match party themes or colors.</li>
+          <li>
+            Stress-Free Fun: Face painters handle setup, painting, and cleanup.
+          </li>
+          <li>
+            Breaks the Ice: Face painting encourages socializing among guests.
+          </li>
+          <li>Memorable Favors: Guests take their artwork home.</li>
+        </ul>
+        <div class="image-container">
+          <img src="assets/images/work23.jpg" alt="Face painting example9" />
+          <img src="assets/images/work26.jpg" alt="Face painting example10" />
+          <img src="assets/images/work9.jpg" alt="Face painting example11" />
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <div class="contact-info">
+          <p class="footer-title">Contact Us</p>
+          <p><span>📍</span> Kamloops, BC, Canada</p>
+          <p><span>📞</span> (250) 682-73-85</p>
+          <p><span>✉️</span> cheekyfaceskamloops@gmail.com</p>
+        </div>
+        <div class="social-media">
+          <p class="footer-title">Follow Us</p>
+          <p>
+            <i class="fab fa-facebook-f"></i>
+            <a
+              href="https://www.facebook.com/cheekyfaceskamloops?mibextid=LQQJ4d"
+              >Facebook</a
+            >
+          </p>
+          <p>
+            <i class="fab fa-instagram"></i>
+            <a
+              href="https://www.instagram.com/cheekyfaceskamloops/profilecard/?igsh=OWFteWplYXRjbmp6 "
+              >Instagram</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright"></p>
+        <p>
+          Website built by
+          <a href="https://livenlab.com" target="_blank">LivenLab</a>
+        </p>
+      </div>
+    </footer>
+    <!-- Get a Quote Modal -->
+    <div id="quoteModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeButtonTop">&times;</span>
+        <h2>Get a Quote</h2>
+        <form id="quoteForm">
+          <!-- Event Type Dropdown -->
+          <label for="eventType">Type of Event:</label>
+          <select id="eventType" name="eventType">
+            <option value="birthday">Birthday Party</option>
+            <option value="other">Other Events</option>
+          </select>
+
+          <!-- Number of Faces Field (for Birthday Party) -->
+          <div id="facesField">
+            <label for="faces"
+              >Number of Faces:<br />
+              <span class="field-details"
+                >Includes custom designs for up to 8 faces; +$5 per additional
+                face</span
+              ></label
+            >
+            <input type="number" id="faces" name="faces" min="8" value="8" />
+          </div>
+
+          <!-- Event Duration Field (for Other Events) -->
+          <div id="durationField" style="display: none">
+            <label for="hours"
+              >Event Duration (Hours):<br />
+              <span class="field-details"
+                >Includes small designs for up to 25 faces</span
+              ></label
+            >
+            <input type="number" id="hours" name="hours" min="1" value="1" />
+          </div>
+
+          <!-- Travel Fee -->
+          <label for="travelFee"
+            >Travel Fee:<br />
+            <span class="field-details"
+              >please add $10 for areas: Westsyde, Batchelor Heights, Dallas,
+              Barnhartvale
+            </span>
+          </label>
+          <select id="travelFee" name="travelFee">
+            <option value="0">$0</option>
+            <option value="10">$10</option>
+          </select>
+
+          <!-- Estimated Quote -->
+          <label for="quote">Estimated Quote:</label>
+          <input type="text" id="quote" name="quote" readonly />
+
+          <p class="field-details">
+            Tax included. The final price may vary depending on additional
+            details. Please contact us for out of town parties,
+            travel fee will vary.
+          </p>
+
+          <!-- Buttons -->
+          <div class="modal-buttons">
+            <button type="button" id="resetButton">Reset</button>
+            <button type="button" id="calculateButton">Calculate</button>
+            <button type="button" id="closeButton">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+>>>>>>> origin/cheekyfacemoreoption
