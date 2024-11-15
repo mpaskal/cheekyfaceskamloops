@@ -1,2 +1,0 @@
-# cheekyfaceskamloops
-Face painting 
