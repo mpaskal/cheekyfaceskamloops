@@ -1,5 +1,5 @@
 :root {
-  --primary-background: #eff8f8;
+  --primary-background: #f5f5f5;
   --footer-background: #d8e0e9;
   --primary-text: #333;
   --menu-text: #4b51a2;
@@ -14,14 +14,19 @@ body {
   color: var(--primary-text);
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  width: 100vw;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Header and Footer Styling */
 header,
 footer {
   background-color: #fff;
+  padding: 1rem;
   text-align: center;
   width: 100%;
 }
@@ -41,10 +46,9 @@ footer {
 /* Header Details */
 .header-details {
   color: var(--highlight-color);
-  font-family: "Dancing Script", cursive;
+  font-family: "Pacifico", cursive;
   margin-top: 0.5rem;
-  font-size: 2em;
-  font-weight: 800;
+  font-size: 1.2rem;
 }
 
 /* Navigation Bar */
@@ -59,10 +63,10 @@ header nav a {
   color: var(--menu-text);
   display: flex;
   text-decoration: none;
-  font-size: 1.5em;
   font-weight: bold;
   padding: 0.5em 0.5em;
   border-radius: 5px;
+  background-color: rgba(75, 81, 162, 0.1);
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -73,16 +77,16 @@ header nav a:hover {
 
 /* Content Wrapper */
 .content-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0.5em auto;
-  width: 80%;
+  background-color: var(--primary-background);
+  padding: 2rem;
+  margin: 0 auto;
+  width: 60%;
 }
 
+/* Centering Section Titles (h2) */
 h2 {
-  font-size: 2.8em;
-  font-family: "Dancing Script", cursive;
+  font-size: 2rem;
+  font-family: "Pacifico", cursive;
   color: var(--highlight-color);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   margin-bottom: 0.75rem;
@@ -106,24 +110,21 @@ h2 {
   }
 }
 
-section {
-  background-color: var(--primary-background);
-  margin-bottom: 1em;
-}
-
-/* Paragraph Styling */
+/* Paragraph Text Styling */
 .intro p,
 .greetings p,
 .benefits p {
-  font-size: 1.4em;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2em;
   line-height: 1.7;
   color: var(--primary-text);
-  margin: 1.5em 1em;
+  margin: 2em auto;
   text-align: center;
 }
 
 /* Benefits List Styling */
 .benefits-list {
+  font-family: "Poppins", sans-serif;
   font-size: 1.2em;
   line-height: 1.7;
   color: var(--primary-text);
@@ -133,22 +134,18 @@ section {
   padding-left: 1em;
 }
 
-.benefits-list li {
-  margin-bottom: 10px;
-}
-
 /* Image Container Styling */
 .image-container {
   display: flex;
+  gap: 0;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 0 1em;
+  justify-content: center;
 }
 
 /* Image Styling with Aspect Ratio */
 .image-container img {
-  height: auto;
-  width: 32%;
+  width: 33.333%;
+  aspect-ratio: 4 / 3;
   max-width: 100%;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -226,26 +223,16 @@ footer {
 @media (max-width: 768px) {
   header,
   footer {
-    padding: 0.5em;
+    padding: 0.5rem;
   }
 
   header nav {
-    gap: 0.3em;
-  }
-
-  header nav a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0.2em 0.2em;
-    font-size: 0.8em;
-    margin: 0;
+    gap: 0.2em;
+    padding: 0 0.1em;
   }
 
   .header-details {
     font-size: 1rem;
-    background-color: var(--primary-background);
   }
 
   .footer-content {
@@ -255,7 +242,7 @@ footer {
 
   .footer-content p,
   .footer-content a {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 
   .footer-bottom {
@@ -297,6 +284,7 @@ footer {
   max-width: 400px;
   margin: auto;
   text-align: left;
+  font-family: "Poppins", sans-serif;
   color: var(--primary-text);
 }
 
@@ -326,7 +314,7 @@ footer {
 /* Modal Title Styling */
 .modal-content h2 {
   color: var(--highlight-color);
-  font-family: "Dancing Script", cursive;
+  font-family: "Pacifico", cursive;
   text-align: center;
   margin: 0.5em 1em;
 }
@@ -394,6 +382,7 @@ label {
   background-color: rgba(75, 81, 162, 0.1);
   transition: background-color 0.3s, color 0.3s;
   border-radius: 4px;
+  font-family: "Poppins", sans-serif;
   transition: background-color 0.3s;
 }
 
