@@ -260,7 +260,7 @@ footer {
 }
 
 .modal label {
-  color: var(--highlight-color);
+  color: var(--menu-text);
 }
 
 /* Close Button Styling */
