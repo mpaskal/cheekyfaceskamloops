@@ -18,9 +18,8 @@ body {
   width: 100vw;
 }
 
-/* Header and Footer Styling */
-header,
-footer {
+/* Header */
+header {
   background-color: #fff;
   text-align: center;
   width: 100%;
@@ -28,9 +27,9 @@ footer {
 
 /* Logo Section */
 .logo-section {
-  text-align: center;
-  padding: 1rem 0;
-  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .logo {
@@ -115,18 +114,16 @@ section {
 .intro p,
 .greetings p,
 .benefits p {
-  font-size: 1.4em;
-  line-height: 1.7;
-  color: var(--primary-text);
-  margin: 1.5em 1em;
+  font-size: 1.3em;
+  line-height: 1.8;
+  margin: 2em 1em;
   text-align: center;
 }
 
 /* Benefits List Styling */
 .benefits-list {
-  font-size: 1.2em;
-  line-height: 1.7;
-  color: var(--primary-text);
+  font-size: 1.3em;
+  line-height: 1.8;
   margin: 2em auto;
   text-align: left;
   max-width: 600px;
@@ -142,7 +139,7 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 0 1em;
+  margin: 1em;
 }
 
 /* Image Styling with Aspect Ratio */
@@ -154,12 +151,12 @@ section {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer Content Styling */
+/* Footer  */
 footer {
   background-color: #fff;
-  color: var(--menu-text);
   padding: 2rem 1rem;
   text-align: center;
+  width: 100%;
 }
 
 .footer-content {
@@ -178,29 +175,24 @@ footer {
   padding: 0 1rem;
 }
 
+.contact-info p,
+.social-media p {
+  display: flex;
+  align-items: center;
+  margin: 0.3rem 0;
+}
+
 .footer-title {
   font-weight: bold;
   color: var(--menu-text);
   margin-bottom: 0.5rem;
 }
 
-.contact-info p,
-.social-media p {
-  display: flex;
-  align-items: center;
-  margin: 0.3rem 0;
-  font-weight: normal;
-  color: var(--primary-text);
-}
-
 .contact-info span,
 .social-media i {
   margin-right: 0.5rem;
-}
-
-.social-media i {
-  color: var(--menu-text);
   font-size: 1.2rem;
+  color: var(--highlight-color);
 }
 
 /* Footer Bottom Section */
@@ -245,7 +237,6 @@ footer {
 
   .header-details {
     font-size: 1rem;
-    background-color: var(--primary-background);
   }
 
   .footer-content {
@@ -297,7 +288,6 @@ footer {
   max-width: 400px;
   margin: auto;
   text-align: left;
-  color: var(--primary-text);
 }
 
 .modal .field-details {
