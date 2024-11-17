@@ -99,7 +99,7 @@ calculateButton.addEventListener("click", () => {
 // Update copyright year
 function updateCopyright() {
   const currentYear = new Date().getFullYear();
-  copyright.innerHTML = `${currentYear} Cheeky Faces. All rights reserved.`;
+  copyright.innerHTML = `Copyright © ${currentYear} Cheeky Faces. All rights reserved`;
 }
 
 // Initial setup
