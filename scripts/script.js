@@ -13,29 +13,34 @@ const durationField = document.getElementById("durationField");
 const travelFeeSelect = document.getElementById("travelFee");
 const quoteOutput = document.getElementById("quote");
 
+// Function to open modal
+function openModal() {
+  quoteModal.classList.add("active"); // Add the active class to center the modal
+}
+
+// Function to close modal
+function closeModal() {
+  quoteModal.classList.remove("active"); // Remove the active class to hide the modal
+}
+
 // Show modal when "Get a Quote" button is clicked
 getQuoteButton.addEventListener("click", (event) => {
   event.preventDefault();
-  quoteModal.style.display = "block";
-  updateFieldsVisibility(eventTypeSelect.value);
+  openModal();
+  updateFieldsVisibility(eventTypeSelect.value); // Update fields based on the event type
 });
 
-// Close modal when the close button is clicked
+// Close modal when the close button (top) is clicked
 closeButtonTop.addEventListener("click", (event) => {
   event.preventDefault();
   closeModal();
 });
 
-// Close modal when the close button is clicked
+// Close modal when the close button (bottom) is clicked
 closeButton.addEventListener("click", (event) => {
   event.preventDefault();
   closeModal();
 });
-
-// Function to close modal
-function closeModal() {
-  quoteModal.style.display = "none";
-}
 
 // Reset form fields
 resetButton.addEventListener("click", (event) => {
@@ -90,18 +95,6 @@ calculateButton.addEventListener("click", () => {
   };
   localStorage.setItem("quoteData", JSON.stringify(quoteData));
 });
-
-// // Load saved quote data from localStorage
-// function loadQuoteData() {
-//   const savedData = JSON.parse(localStorage.getItem("quoteData"));
-//   if (savedData) {
-//     eventTypeSelect.value = savedData.eventType;
-//     travelFeeSelect.value = savedData.travelFee;
-//     facesField.value = savedData.faces || 8;
-//     quoteOutput.value = `$${savedData.quote.toFixed(2)}`;
-//     updateFieldsVisibility(savedData.eventType);
-//   }
-// }
 
 // Update copyright year
 function updateCopyright() {

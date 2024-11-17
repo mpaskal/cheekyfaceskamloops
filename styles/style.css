@@ -1,5 +1,5 @@
 :root {
-  --primary-background: #eff8f8;
+  --primary-background: #ffeedf;
   --footer-background: #d8e0e9;
   --primary-text: #333;
   --menu-text: #4b51a2;
@@ -29,7 +29,8 @@ header {
 .logo-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: auto;
+  width: 90%;
 }
 
 .logo {
@@ -41,7 +42,7 @@ header {
 .header-details {
   color: var(--highlight-color);
   font-family: "Dancing Script", cursive;
-  margin-top: 0.5rem;
+  margin-top: 0.5em;
   font-size: 2em;
   font-weight: 800;
 }
@@ -84,7 +85,7 @@ h2 {
   font-family: "Dancing Script", cursive;
   color: var(--highlight-color);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.8em;
   text-align: center; /* Center-align the h2 */
   animation: fadeInZoom 1s ease-in-out;
 }
@@ -107,17 +108,18 @@ h2 {
 
 section {
   background-color: var(--primary-background);
-  margin-bottom: 1em;
+  margin-bottom: 1.2em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 /* Paragraph Styling */
 .intro p,
-.greetings p,
-.benefits p {
+.greetings p {
   font-size: 1.3em;
   line-height: 1.8;
   margin: 2em 1em;
-  text-align: center;
+  text-align: justify;
 }
 
 /* Benefits List Styling */
@@ -126,8 +128,7 @@ section {
   line-height: 1.8;
   margin: 2em auto;
   text-align: left;
-  max-width: 600px;
-  padding-left: 1em;
+  max-width: 80%;
 }
 
 .benefits-list li {
@@ -139,22 +140,30 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 1em;
+  margin: 0.8em auto;
+  overflow: hidden;
 }
 
-/* Image Styling with Aspect Ratio */
 .image-container img {
   height: auto;
   width: 32%;
-  max-width: 100%;
   object-fit: cover;
+  object-position: center center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1em;
+  transition: object-position 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover Effect */
+.image-container img:hover {
+  object-position: center 30%;
+  filter: brightness(1.1);
 }
 
 /* Footer  */
 footer {
   background-color: #fff;
-  padding: 2rem 1rem;
+  padding: 1em;
   text-align: center;
   width: 100%;
 }
@@ -163,7 +172,8 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: start;
-  padding-bottom: 1rem;
+  padding-bottom: 1em;
+  margin: ;
 }
 
 .contact-info,
@@ -172,26 +182,26 @@ footer {
   flex-direction: column;
   align-items: start;
   text-align: left;
-  padding: 0 1rem;
+  padding: 0 1em;
 }
 
 .contact-info p,
 .social-media p {
   display: flex;
   align-items: center;
-  margin: 0.3rem 0;
+  margin: 0.3em 0;
 }
 
 .footer-title {
   font-weight: bold;
   color: var(--menu-text);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5em;
 }
 
 .contact-info span,
 .social-media i {
-  margin-right: 0.5rem;
-  font-size: 1.2rem;
+  margin-right: 0.5em;
+  font-size: 1.2em;
   color: var(--highlight-color);
 }
 
@@ -200,9 +210,9 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-top: 1rem;
+  padding-top: 1em;
   border-top: 1px solid var(--menu-text);
-  font-size: 0.9rem;
+  font-size: 0.9em;
 }
 
 .footer-bottom p {
@@ -216,9 +226,9 @@ footer {
 
 /* Responsive Layout for Smaller Screens */
 @media (max-width: 768px) {
-  header,
-  footer {
-    padding: 0.5em;
+  html,
+  body {
+    font-size: 0.9em;
   }
 
   header nav {
@@ -230,23 +240,18 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0.2em 0.2em;
-    font-size: 0.8em;
+    padding: 0.2em;
+    font-size: 0.9em;
     margin: 0;
   }
 
   .header-details {
-    font-size: 1rem;
+    font-size: 1em;
   }
 
   .footer-content {
     flex-direction: column;
     align-items: center;
-  }
-
-  .footer-content p,
-  .footer-content a {
-    font-size: 1.2rem;
   }
 
   .footer-bottom {
@@ -255,30 +260,27 @@ footer {
 
   .content-wrapper {
     background-color: var(--primary-background);
-    padding: 1em;
     margin: 0 auto;
-    width: 82%;
-  }
-
-  .image-container {
-    flex-direction: column;
-  }
-
-  .image-container img {
-    width: 100%;
+    width: 93%;
   }
 }
 
 /* Modal Styling */
 .modal {
-  display: none;
+  display: none; /* Hidden by default */
   position: fixed;
   z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.modal.active {
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
 .modal-content {
@@ -286,8 +288,9 @@ footer {
   padding: 20px;
   border-radius: 8px;
   max-width: 400px;
-  margin: auto;
-  text-align: left;
+  width: 90%; /* Responsive width */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
 }
 
 .modal .field-details {
@@ -303,7 +306,7 @@ footer {
 /* Close Button Styling */
 .close-btn {
   float: right;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   cursor: pointer;
 }
 
@@ -324,7 +327,7 @@ footer {
 /* Label Styling */
 label {
   font-weight: bold;
-  margin-top: 0.5rem;
+  margin-top: 0.5em;
   display: block;
 }
 
@@ -351,7 +354,7 @@ label {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 0.5rem;
+  margin-top: 0.5em;
 }
 
 .quote-row label {
@@ -362,24 +365,24 @@ label {
 .disclaimer {
   font-size: 0.9em;
   color: #555;
-  margin-top: 1rem;
+  margin-top: 1em;
 }
 
 /* Modal Buttons Styling */
 .modal-buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 1em;
 }
 
 .modal-buttons button {
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   border: none;
   cursor: pointer;
   color: var(--menu-text);
   text-decoration: none;
   font-weight: bold;
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   border-radius: 5px;
   background-color: rgba(75, 81, 162, 0.1);
   transition: background-color 0.3s, color 0.3s;
