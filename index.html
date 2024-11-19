@@ -29,7 +29,7 @@
       </div>
       <nav>
         <a href="#" id="getQuoteButton">Get a Quote</a>
-        <a href="booking.html">Booking Request</a>
+        <a href="#" id="bookingModalButton">Booking Request</a>
         <a href="pages/faq.html">FAQ</a>
         <a href="pages/review.html">Reviews</a>
       </nav>
@@ -144,7 +144,7 @@
     <!-- Get a Quote Modal -->
     <div id="quoteModal" class="modal">
       <div class="modal-content">
-        <span class="close-btn" id="closeButtonTop">&times;</span>
+        <span class="close-btn" id="closeButtonTopQuote">&times;</span>
         <h2>Get a Quote</h2>
         <form id="quoteForm">
           <!-- Event Type Dropdown -->
@@ -204,9 +204,29 @@
           <div class="modal-buttons">
             <button type="button" id="resetButton">Reset</button>
             <button type="button" id="calculateButton">Calculate</button>
-            <button type="button" id="closeButton">Close</button>
+            <button type="button" id="closeButtonQuote">Close</button>
           </div>
         </form>
+      </div>
+    </div>
+
+    <div id="bookingModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeButtonTopBooking">&times;</span>
+        <h2>Booking Request</h2>
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLScRNxZeeJY-HA_aTUXCz81UKubwv_71SESDitelvtMDGyatPw/viewform?embedded=true"
+          width="100%"
+          height="500"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+        >
+          Loading…
+        </iframe>
+        <div class="modal-buttons">
+          <button type="button" id="closeButtonBooking">Close</button>
+        </div>
       </div>
     </div>
   </body>

@@ -2,8 +2,8 @@
 const copyright = document.querySelector(".copyright");
 const getQuoteButton = document.getElementById("getQuoteButton");
 const quoteModal = document.getElementById("quoteModal");
-const closeButtonTop = document.getElementById("closeButtonTop");
-const closeButton = document.getElementById("closeButton");
+const closeButtonTopQuote = document.getElementById("closeButtonTopQuote");
+const closeButtonQuote = document.getElementById("closeButtonQuote");
 const resetButton = document.getElementById("resetButton");
 const calculateButton = document.getElementById("calculateButton");
 const eventTypeSelect = document.getElementById("eventType");
@@ -12,34 +12,38 @@ const facesNumber = document.getElementById("faces");
 const durationField = document.getElementById("durationField");
 const travelFeeSelect = document.getElementById("travelFee");
 const quoteOutput = document.getElementById("quote");
+const bookingModal = document.getElementById("bookingModal");
+const closeButtonTopBooking = document.getElementById("closeButtonTopBooking");
+const closeButtonBooking = document.getElementById("closeButtonBooking");
 
 // Function to open modal
-function openModal() {
-  quoteModal.classList.add("active"); // Add the active class to center the modal
+function openModal(modalId) {
+  modalId.classList.add("active"); // Add the active class to center the modal
 }
 
 // Function to close modal
-function closeModal() {
-  quoteModal.classList.remove("active"); // Remove the active class to hide the modal
+function closeModal(modalId) {
+  modalId.classList.remove("active"); // Remove the active class to hide the modal
 }
 
 // Show modal when "Get a Quote" button is clicked
 getQuoteButton.addEventListener("click", (event) => {
   event.preventDefault();
-  openModal();
+  closeModal(bookingModal);
+  openModal(quoteModal);
   updateFieldsVisibility(eventTypeSelect.value); // Update fields based on the event type
 });
 
-// Close modal when the close button (top) is clicked
-closeButtonTop.addEventListener("click", (event) => {
+// Close quote modal when the close button (top) is clicked
+closeButtonTopQuote.addEventListener("click", (event) => {
   event.preventDefault();
-  closeModal();
+  closeModal(quoteModal);
 });
 
-// Close modal when the close button (bottom) is clicked
-closeButton.addEventListener("click", (event) => {
+// Close quote modal when the close button (bottom) is clicked
+closeButtonQuote.addEventListener("click", (event) => {
   event.preventDefault();
-  closeModal();
+  closeModal(quoteModal);
 });
 
 // Reset form fields
@@ -51,7 +55,6 @@ resetButton.addEventListener("click", (event) => {
   facesNumber.value = "8";
   travelFeeSelect.value = "0";
   quoteOutput.value = "";
-  localStorage.removeItem("quoteData");
   updateFieldsVisibility(eventTypeSelect.value);
 });
 
@@ -85,15 +88,25 @@ calculateButton.addEventListener("click", () => {
 
   quote += travelFee;
   quoteOutput.value = `$${quote.toFixed(2)}`;
+});
 
-  // Save data
-  const quoteData = {
-    eventType: eventTypeSelect.value,
-    travelFee,
-    faces: facesField.value,
-    quote,
-  };
-  localStorage.setItem("quoteData", JSON.stringify(quoteData));
+// Booking Modal
+bookingModalButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  closeModal(quoteModal);
+  openModal(bookingModal);
+  updateFieldsVisibility(eventTypeSelect.value);
+});
+
+closeButtonTopBooking.addEventListener("click", (event) => {
+  event.preventDefault();
+  closeModal(bookingModal);
+});
+
+// Close modal when the close button (bottom) is clicked
+closeButtonBooking.addEventListener("click", (event) => {
+  event.preventDefault();
+  closeModal(bookingModal);
 });
 
 // Update copyright year
