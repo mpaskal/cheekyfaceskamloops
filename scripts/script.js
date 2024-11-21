@@ -15,6 +15,7 @@ const quoteOutput = document.getElementById("quote");
 const bookingModal = document.getElementById("bookingModal");
 const closeButtonTopBooking = document.getElementById("closeButtonTopBooking");
 const closeButtonBooking = document.getElementById("closeButtonBooking");
+const eventTypeRadios = document.querySelectorAll('input[name="eventType"]');
 
 // Function to open modal
 function openModal(modalId) {
@@ -49,18 +50,20 @@ closeButtonQuote.addEventListener("click", (event) => {
 // Reset form fields
 resetButton.addEventListener("click", (event) => {
   event.preventDefault();
-  eventTypeSelect.value = "birthday";
   facesField.style.display = "block";
   durationField.style.display = "none";
   facesNumber.value = "8";
-  travelFeeSelect.value = "0";
   quoteOutput.value = "";
-  updateFieldsVisibility(eventTypeSelect.value);
+  document.getElementById("birthday").checked = true;
+  updateFieldsVisibility("birthday");
+  document.getElementById("travelFee0").checked = true;
 });
 
-// Update field visibility based on event type selection
-eventTypeSelect.addEventListener("change", () => {
-  updateFieldsVisibility(eventTypeSelect.value);
+// Update field visibility
+eventTypeRadios.forEach((radio) => {
+  radio.addEventListener("change", (event) => {
+    updateFieldsVisibility(event.target.value);
+  });
 });
 
 function updateFieldsVisibility(eventType) {
@@ -73,12 +76,27 @@ function updateFieldsVisibility(eventType) {
   }
 }
 
-// Calculate quote when calculate button is clicked
+function getSelectedTravelFee() {
+  const selectedFee = document.querySelector('input[name="travelFee"]:checked');
+  return parseInt(selectedFee.value);
+}
+
+// Get the selected travel fee
+function getSelectedTravelFee() {
+  const selectedFee = document.querySelector('input[name="travelFee"]:checked');
+  return parseInt(selectedFee.value);
+}
+
+// Calculate button logic to use travel fee radio buttons
 calculateButton.addEventListener("click", () => {
   let quote = 0;
-  const travelFee = parseInt(travelFeeSelect.value);
+  const travelFee = getSelectedTravelFee();
 
-  if (eventTypeSelect.value === "birthday") {
+  const selectedEventType = document.querySelector(
+    'input[name="eventType"]:checked'
+  ).value;
+
+  if (selectedEventType === "birthday") {
     const faces = parseInt(facesNumber.value) || 8;
     quote = 100 + (faces - 8) * 5;
   } else {

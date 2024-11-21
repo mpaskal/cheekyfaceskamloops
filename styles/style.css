@@ -271,6 +271,7 @@ footer {
   align-items: center;
 }
 
+/* Modal Content */
 .modal-content {
   position: relative;
   display: flex;
@@ -289,18 +290,12 @@ footer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.modal h2 {
-  margin: 0;
-}
-
-.modal .field-details {
-  font-size: 0.8em;
-  font-weight: 500;
+/* Modal Title */
+.modal-content h2 {
   color: var(--highlight-color);
-}
-
-.modal label {
-  color: var(--menu-text);
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  margin: 0;
 }
 
 /* Close Button Styling */
@@ -314,25 +309,45 @@ footer {
   font-weight: 600;
 }
 
-/* Modal Title Styling */
-.modal-content h2 {
+/* Field Details Text */
+.modal .field-details {
+  font-size: 0.8em;
+  font-weight: 500;
   color: var(--highlight-color);
-  font-family: "Dancing Script", cursive;
-  text-align: center;
-  margin: 0.5em 1em;
 }
 
-/* Label Styling */
-label {
-  font-weight: bold;
-  margin-top: 0.5em;
+/* Labels for Form Fields */
+.form-label {
   display: block;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  color: var(--menu-text);
 }
 
-/* Input Field Styling */
-#quoteForm input,
-#quoteForm select {
-  width: calc(100% - 20px);
+/* Styling for Radio Button Groups */
+.radio-group {
+  display: flex; /* Align options in a single row */
+  gap: 3em; /* Space between options */
+  align-items: center; /* Vertically center align items */
+  justify-content: center;
+  margin-bottom: 1em; /* Add space below the group */
+}
+
+.radio-label {
+  display: flex; /* Align radio button and label in a row */
+  align-items: center; /* Center-align items vertically */
+  gap: 0.5em; /* Space between the radio button and its label */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+input[type="radio"] {
+  accent-color: var(--highlight-color); /* Match the theme color */
+}
+
+/* Input Fields */
+#quoteForm input {
+  width: 30%;
   padding: 0.5em;
   margin-bottom: 0.5em;
   border-radius: 10%;
@@ -340,19 +355,7 @@ label {
   color: var(--menu-text);
 }
 
-/* Estimated Quote Row */
-.quote-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 0.5em;
-}
-
-.quote-row label {
-  font-weight: bold;
-}
-
-/* Modal Buttons Styling */
+/* Modal Buttons */
 .modal-buttons {
   display: flex;
   justify-content: center;
@@ -434,11 +437,6 @@ label {
     padding: 1em 0;
   }
 
-  .modal-content {
-    height: auto;
-    width: 80%;
-  }
-
   .footer-content {
     flex-direction: column;
     align-items: center;
@@ -446,5 +444,21 @@ label {
 
   .footer-bottom {
     flex-direction: column;
+  }
+
+  .modal-content {
+    height: auto;
+    width: 80%;
+  }
+
+  .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+  }
+
+  .radio-label {
+    width: 100%;
   }
 }

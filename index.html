@@ -159,57 +159,81 @@
         <span class="close-btn" id="closeButtonTopQuote">&times;</span>
         <h2>Get a Quote</h2>
         <form id="quoteForm">
-          <!-- Event Type Dropdown -->
-          <label for="eventType">Type of Event:</label>
-          <select id="eventType" name="eventType">
-            <option value="birthday">Birthday Party</option>
-            <option value="other">Other Events</option>
-          </select>
+          <label class="form-label">Type of Event:</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input
+                type="radio"
+                id="birthday"
+                name="eventType"
+                value="birthday"
+                checked
+              />
+              Birthday Party
+            </label>
+            <label class="radio-label">
+              <input type="radio" id="other" name="eventType" value="other" />
+              Other Events
+            </label>
+          </div>
 
           <!-- Number of Faces Field (for Birthday Party) -->
           <div id="facesField">
-            <label for="faces"
-              >Number of Faces:<br />
-              <span class="field-details"
-                >Includes custom designs for up to 8 faces; +$5 per additional
-                face</span
-              ></label
-            >
+            <label class="form-label" for="faces">
+              Number of Faces:
+              <br />
+              <span class="field-details">
+                Includes custom designs for up to 8 faces; +$5 per additional
+                face
+              </span>
+            </label>
             <input type="number" id="faces" name="faces" min="8" value="8" />
           </div>
 
           <!-- Event Duration Field (for Other Events) -->
           <div id="durationField" style="display: none">
-            <label for="hours"
-              >Event Duration (Hours):<br />
-              <span class="field-details"
-                >Includes small designs for up to 25 faces</span
-              ></label
-            >
+            <label class="form-label" for="hours">
+              Event Duration (Hours):
+              <br />
+              <span class="field-details">
+                Includes small designs for up to 25 faces
+              </span>
+            </label>
             <input type="number" id="hours" name="hours" min="1" value="1" />
           </div>
 
-          <!-- Travel Fee -->
-          <label for="travelFee"
-            >Travel Fee:<br />
-            <span class="field-details"
-              >please add $10 for areas: Westsyde, Batchelor Heights, Dallas,
-              Barnhartvale
-            </span>
-          </label>
-          <select id="travelFee" name="travelFee">
-            <option value="0">$0</option>
-            <option value="10">$10</option>
-          </select>
+          <!-- Travel Fee Radio Buttons -->
+          <label class="form-label">Travel Fee:</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input
+                type="radio"
+                id="travelFee0"
+                name="travelFee"
+                value="0"
+                checked
+              />
+              $0
+            </label>
+            <label class="radio-label">
+              <input
+                type="radio"
+                id="travelFee10"
+                name="travelFee"
+                value="10"
+              />
+              $10
+            </label>
+          </div>
 
           <!-- Estimated Quote -->
-          <label for="quote">Estimated Quote:</label>
+          <label class="form-label" for="quote">Estimated Quote:</label>
           <input type="text" id="quote" name="quote" readonly />
 
           <p class="field-details">
             Tax included. The final price may vary depending on additional
-            details. Please contact us for out of town parties,
-            travel fee will vary.
+            details. Please contact us for out-of-town parties; travel fee will
+            vary.
           </p>
 
           <!-- Buttons -->
