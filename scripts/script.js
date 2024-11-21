@@ -6,25 +6,24 @@ const closeButtonTopQuote = document.getElementById("closeButtonTopQuote");
 const closeButtonQuote = document.getElementById("closeButtonQuote");
 const resetButton = document.getElementById("resetButton");
 const calculateButton = document.getElementById("calculateButton");
-const eventTypeSelect = document.getElementById("eventType");
 const facesField = document.getElementById("facesField");
 const facesNumber = document.getElementById("faces");
 const durationField = document.getElementById("durationField");
-const travelFeeSelect = document.getElementById("travelFee");
 const quoteOutput = document.getElementById("quote");
 const bookingModal = document.getElementById("bookingModal");
 const closeButtonTopBooking = document.getElementById("closeButtonTopBooking");
 const closeButtonBooking = document.getElementById("closeButtonBooking");
 const eventTypeRadios = document.querySelectorAll('input[name="eventType"]');
+const travelFeeRadios = document.querySelectorAll('input[name="travelFee"]');
 
 // Function to open modal
 function openModal(modalId) {
-  modalId.classList.add("active"); // Add the active class to center the modal
+  modalId?.classList.add("active");
 }
 
 // Function to close modal
 function closeModal(modalId) {
-  modalId.classList.remove("active"); // Remove the active class to hide the modal
+  modalId?.classList.remove("active");
 }
 
 // Show modal when "Get a Quote" button is clicked
@@ -32,7 +31,11 @@ getQuoteButton.addEventListener("click", (event) => {
   event.preventDefault();
   closeModal(bookingModal);
   openModal(quoteModal);
-  updateFieldsVisibility(eventTypeSelect.value); // Update fields based on the event type
+
+  const selectedEventType = document.querySelector(
+    'input[name="eventType"]:checked'
+  );
+  updateFieldsVisibility(selectedEventType?.value || "birthday");
 });
 
 // Close quote modal when the close button (top) is clicked
@@ -50,13 +53,17 @@ closeButtonQuote.addEventListener("click", (event) => {
 // Reset form fields
 resetButton.addEventListener("click", (event) => {
   event.preventDefault();
+
+  document.getElementById("birthday").checked = true;
   facesField.style.display = "block";
   durationField.style.display = "none";
   facesNumber.value = "8";
-  quoteOutput.value = "";
-  document.getElementById("birthday").checked = true;
-  updateFieldsVisibility("birthday");
+
   document.getElementById("travelFee0").checked = true;
+
+  quoteOutput.value = "";
+
+  updateFieldsVisibility("birthday");
 });
 
 // Update field visibility
@@ -76,15 +83,10 @@ function updateFieldsVisibility(eventType) {
   }
 }
 
-function getSelectedTravelFee() {
-  const selectedFee = document.querySelector('input[name="travelFee"]:checked');
-  return parseInt(selectedFee.value);
-}
-
 // Get the selected travel fee
 function getSelectedTravelFee() {
   const selectedFee = document.querySelector('input[name="travelFee"]:checked');
-  return parseInt(selectedFee.value);
+  return selectedFee ? parseInt(selectedFee.value) : 0;
 }
 
 // Calculate button logic to use travel fee radio buttons
@@ -100,7 +102,7 @@ calculateButton.addEventListener("click", () => {
     const faces = parseInt(facesNumber.value) || 8;
     quote = 100 + (faces - 8) * 5;
   } else {
-    const hours = parseInt(document.getElementById("hours").value);
+    const hours = parseInt(document.getElementById("hours").value) || 1;
     quote = hours * 100;
   }
 
@@ -113,7 +115,6 @@ bookingModalButton.addEventListener("click", (event) => {
   event.preventDefault();
   closeModal(quoteModal);
   openModal(bookingModal);
-  updateFieldsVisibility(eventTypeSelect.value);
 });
 
 closeButtonTopBooking.addEventListener("click", (event) => {
