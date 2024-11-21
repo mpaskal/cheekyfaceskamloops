@@ -23,7 +23,6 @@ body {
 
 /* Header */
 header {
-  background-color: #fff;
   text-align: center;
   width: 100%;
 }
@@ -90,7 +89,7 @@ h2 {
   font-family: "Dancing Script", cursive;
   color: var(--highlight-color);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  margin-bottom: 0.8em;
+  margin: 0.3em auto 0.6em;
   text-align: center;
   animation: fadeInZoom 1s ease-in-out;
 }
@@ -112,10 +111,10 @@ h2 {
 }
 
 section {
-  padding: 1.5em 2em;
-  margin-bottom: 1.5em;
+  padding: 0.8em;
   background-color: var(--primary-background);
   border-radius: 8px;
+  margin-bottom: 0.8em;
 }
 
 /* Paragraph Styling */
@@ -124,7 +123,8 @@ section {
 .list {
   font-size: clamp(1rem, 1.2vw, 1.2rem);
   line-height: 1.7;
-  margin: 0 2em 2em 2em;
+  margin: 0 1.5em 1em 1.5em;
+  padding: 1em 0 1em 0.4em;
   text-align: left;
 }
 
@@ -135,7 +135,7 @@ section {
 
 .list {
   list-style: none;
-  padding: 1em 2em;
+  margin: 0;
   max-width: 80%;
 }
 
@@ -164,7 +164,7 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 0.8em auto;
+  margin: 0.5em 0;
   overflow: hidden;
 }
 
@@ -174,7 +174,7 @@ section {
   object-fit: fill;
   object-position: center center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   transition: object-position 0.3s ease, filter 0.3s ease;
 }
 
@@ -238,9 +238,10 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-top: 1em;
+  padding: 0.6em 0;
   border-top: 1px solid var(--menu-text);
   font-size: 0.9em;
+  margin-bottom: 0.2em;
 }
 
 .footer-bottom p {
@@ -261,13 +262,13 @@ footer {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal.active {
-  display: flex; /* Flexbox for centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content {
@@ -275,7 +276,6 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   background-color: #fff;
   color: var(--primary-text);
   font-size: clamp(1rem, 1.2vw, 1.2rem);
@@ -365,7 +365,6 @@ label {
   cursor: pointer;
   text-decoration: none;
   font-weight: bold;
-  background-color: #fff;
   margin: 0.5em;
   font-size: clamp(0.9rem, 1vw, 1rem);
   padding: 0.6em 1.2em;
@@ -414,6 +413,32 @@ label {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   }
 
+  section {
+    padding: 1em;
+    margin-bottom: 0.6em;
+  }
+
+  .content-wrapper {
+    margin: 0.2em auto;
+    width: 94%;
+  }
+
+  .image-container {
+    margin: 0.2em 0 0.5em 0;
+  }
+
+  .intro p,
+  .greetings p,
+  .list {
+    margin: 0 0.5em;
+    padding: 1em 0;
+  }
+
+  .modal-content {
+    height: auto;
+    width: 80%;
+  }
+
   .footer-content {
     flex-direction: column;
     align-items: center;
@@ -421,17 +446,5 @@ label {
 
   .footer-bottom {
     flex-direction: column;
-  }
-
-  .content-wrapper {
-    background-color: var(--primary-background);
-    margin: 0 auto;
-    padding: 2em;
-    width: 70%;
-  }
-
-  .modal-content {
-    height: auto;
-    width: 80%;
   }
 }
