@@ -62,7 +62,7 @@ header nav a {
   text-decoration: none;
   font-size: clamp(0.9rem, 1.2vw, 1.5rem);
   font-weight: bold;
-  padding: 0.5em 1em; /* Increase padding for better tap targets */
+  padding: 0.5em 1em;
   border-radius: 8px;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -276,18 +276,17 @@ footer {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background-color: #fff;
   color: var(--primary-text);
   font-size: clamp(1rem, 1.2vw, 1.2rem);
   line-height: 1.6;
-  padding: 20px;
+  padding: 1em 1em 0 1em;
   border-radius: 8px;
-  height: auto;
   max-height: 90%;
   width: 35%;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
 }
 
 /* Modal Title */
@@ -327,22 +326,22 @@ footer {
 
 /* Styling for Radio Button Groups */
 .radio-group {
-  display: flex; /* Align options in a single row */
-  gap: 3em; /* Space between options */
-  align-items: center; /* Vertically center align items */
+  display: flex;
+  gap: 3em;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 1em; /* Add space below the group */
+  margin-bottom: 1em;
 }
 
 .radio-label {
-  display: flex; /* Align radio button and label in a row */
-  align-items: center; /* Center-align items vertically */
-  gap: 0.5em; /* Space between the radio button and its label */
-  white-space: nowrap; /* Prevent text from wrapping */
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  white-space: nowrap;
 }
 
 input[type="radio"] {
-  accent-color: var(--highlight-color); /* Match the theme color */
+  accent-color: var(--highlight-color);
 }
 
 /* Input Fields */
@@ -350,7 +349,7 @@ input[type="radio"] {
   width: 30%;
   padding: 0.5em;
   margin-bottom: 0.5em;
-  border-radius: 10%;
+  border-radius: 8px;
   border: 1px solid #ddd;
   color: var(--menu-text);
 }
@@ -455,7 +454,7 @@ input[type="radio"] {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1em;
+    gap: 1.5em;
   }
 
   .radio-label {
