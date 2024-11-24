@@ -15,6 +15,9 @@ const closeButtonTopBooking = document.getElementById("closeButtonTopBooking");
 const closeButtonBooking = document.getElementById("closeButtonBooking");
 const eventTypeRadios = document.querySelectorAll('input[name="eventType"]');
 const travelFeeRadios = document.querySelectorAll('input[name="travelFee"]');
+const reviewModal = document.getElementById("reviewModal");
+const reviewModalButton = document.getElementById("reviewModalButton");
+const closeReviewButton = document.getElementById("closeReviewButton");
 
 // Function to open modal
 function openModal(modalId) {
@@ -126,6 +129,16 @@ closeButtonTopBooking.addEventListener("click", (event) => {
 closeButtonBooking.addEventListener("click", (event) => {
   event.preventDefault();
   closeModal(bookingModal);
+});
+
+// Review modal
+reviewModalButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  reviewModal.style.display = "flex";
+});
+
+closeReviewButton.addEventListener("click", () => {
+  reviewModal.style.display = "none";
 });
 
 // Update copyright year
