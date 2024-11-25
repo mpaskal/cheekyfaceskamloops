@@ -395,6 +395,40 @@ input[type="radio"] {
   padding-bottom: 0.5em;
 }
 
+.faqs {
+  text-align: left;
+  margin: 1em 0;
+}
+
+.faq-item {
+  margin-bottom: 1em;
+}
+
+.faq-question {
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--menu-text);
+  padding: 0.5em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: var(--primary-background);
+  transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+  background-color: var(--highlight-color);
+  color: #fff;
+}
+
+.faq-answer {
+  padding: 0.5em;
+  border-left: 2px solid var(--highlight-color);
+  margin-top: 0.5em;
+  display: none;
+  background-color: #fff;
+  color: var(--primary-text);
+}
+
 @media (max-width: 1024px) {
   .modal-content {
     height: auto;

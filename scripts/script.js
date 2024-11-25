@@ -21,6 +21,8 @@ const closeButtonReview = document.getElementById("closeButtonReview");
 const closeButtonTopReview = document.getElementById("closeButtonTopReview");
 const closeButtonFAQs = document.getElementById("closeButtonFAQs");
 const closeButtonTopFAQs = document.getElementById("closeButtonTopFAQs");
+const faqsModal = document.getElementById("faqsModal");
+const faqQuestions = document.querySelectorAll(".faq-question");
 const modals = [quoteModal, bookingModal, reviewModal, faqsModal];
 
 // Function to open modal
@@ -140,6 +142,20 @@ calculateButton.addEventListener("click", () => {
 
   quote += travelFee;
   quoteOutput.value = `$${quote.toFixed(2)}`;
+});
+
+// Toggle FAQ answer visibility
+faqQuestions.forEach((question) => {
+  question.addEventListener("click", () => {
+    const targetId = question.getAttribute("data-target");
+    const answer = document.getElementById(targetId);
+
+    if (answer.style.display === "block") {
+      answer.style.display = "none"; // Collapse if already open
+    } else {
+      answer.style.display = "block"; // Expand on click
+    }
+  });
 });
 
 // Update copyright year
