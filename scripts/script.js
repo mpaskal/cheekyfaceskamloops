@@ -17,7 +17,9 @@ const eventTypeRadios = document.querySelectorAll('input[name="eventType"]');
 const travelFeeRadios = document.querySelectorAll('input[name="travelFee"]');
 const reviewModal = document.getElementById("reviewModal");
 const reviewModalButton = document.getElementById("reviewModalButton");
-const closeReviewButton = document.getElementById("closeReviewButton");
+const closeButtonReview = document.getElementById("closeButtonReview");
+const closeButtonTopReview = document.getElementById("closeButtonTopReview");
+const modals = [quoteModal, bookingModal, reviewModal];
 
 // Function to open modal
 function openModal(modalId) {
@@ -29,28 +31,50 @@ function closeModal(modalId) {
   modalId?.classList.remove("active");
 }
 
-// Show modal when "Get a Quote" button is clicked
-getQuoteButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  closeModal(bookingModal);
-  openModal(quoteModal);
+// Function to close all modals
+function closeAllModals() {
+  modals.forEach((modal) => closeModal(modal));
+}
 
-  const selectedEventType = document.querySelector(
-    'input[name="eventType"]:checked'
-  );
-  updateFieldsVisibility(selectedEventType?.value || "birthday");
+const openButtons = [
+  { button: reviewModalButton, modal: reviewModal },
+  { button: bookingModalButton, modal: bookingModal },
+  { button: getQuoteButton, modal: quoteModal },
+];
+
+// Add event listeners for all open buttons
+openButtons.forEach(({ button, modal }) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    closeAllModals();
+    openModal(modal);
+
+    // Specific logic for the "Get a Quote" modal
+    if (modal === quoteModal) {
+      const selectedEventType = document.querySelector(
+        'input[name="eventType"]:checked'
+      );
+      updateFieldsVisibility(selectedEventType?.value || "birthday");
+    }
+  });
 });
 
-// Close quote modal when the close button (top) is clicked
-closeButtonTopQuote.addEventListener("click", (event) => {
-  event.preventDefault();
-  closeModal(quoteModal);
-});
+// All close buttons and their corresponding modals
+const closeButtons = [
+  { button: closeButtonBooking, modal: bookingModal },
+  { button: closeButtonReview, modal: reviewModal },
+  { button: closeButtonQuote, modal: quoteModal },
+  { button: closeButtonTopBooking, modal: bookingModal },
+  { button: closeButtonTopReview, modal: reviewModal },
+  { button: closeButtonTopQuote, modal: quoteModal },
+];
 
-// Close quote modal when the close button (bottom) is clicked
-closeButtonQuote.addEventListener("click", (event) => {
-  event.preventDefault();
-  closeModal(quoteModal);
+// Add event listeners for all close buttons
+closeButtons.forEach(({ button, modal }) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    closeModal(modal);
+  });
 });
 
 // Reset form fields
@@ -111,34 +135,6 @@ calculateButton.addEventListener("click", () => {
 
   quote += travelFee;
   quoteOutput.value = `$${quote.toFixed(2)}`;
-});
-
-// Booking Modal
-bookingModalButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  closeModal(quoteModal);
-  openModal(bookingModal);
-});
-
-closeButtonTopBooking.addEventListener("click", (event) => {
-  event.preventDefault();
-  closeModal(bookingModal);
-});
-
-// Close modal when the close button (bottom) is clicked
-closeButtonBooking.addEventListener("click", (event) => {
-  event.preventDefault();
-  closeModal(bookingModal);
-});
-
-// Review modal
-reviewModalButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  reviewModal.style.display = "flex";
-});
-
-closeReviewButton.addEventListener("click", () => {
-  reviewModal.style.display = "none";
 });
 
 // Update copyright year
