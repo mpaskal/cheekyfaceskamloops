@@ -1,6 +1,6 @@
 // DOM Elements
 const copyright = document.querySelector(".copyright");
-const getQuoteButton = document.getElementById("getQuoteButton");
+const quoteModalButton = document.getElementById("quoteModalButton");
 const quoteModal = document.getElementById("quoteModal");
 const closeButtonTopQuote = document.getElementById("closeButtonTopQuote");
 const closeButtonQuote = document.getElementById("closeButtonQuote");
@@ -19,7 +19,9 @@ const reviewModal = document.getElementById("reviewModal");
 const reviewModalButton = document.getElementById("reviewModalButton");
 const closeButtonReview = document.getElementById("closeButtonReview");
 const closeButtonTopReview = document.getElementById("closeButtonTopReview");
-const modals = [quoteModal, bookingModal, reviewModal];
+const closeButtonFAQs = document.getElementById("closeButtonFAQs");
+const closeButtonTopFAQs = document.getElementById("closeButtonTopFAQs");
+const modals = [quoteModal, bookingModal, reviewModal, faqsModal];
 
 // Function to open modal
 function openModal(modalId) {
@@ -39,7 +41,8 @@ function closeAllModals() {
 const openButtons = [
   { button: reviewModalButton, modal: reviewModal },
   { button: bookingModalButton, modal: bookingModal },
-  { button: getQuoteButton, modal: quoteModal },
+  { button: quoteModalButton, modal: quoteModal },
+  { button: faqsModalButton, modal: faqsModal },
 ];
 
 // Add event listeners for all open buttons
@@ -64,9 +67,11 @@ const closeButtons = [
   { button: closeButtonBooking, modal: bookingModal },
   { button: closeButtonReview, modal: reviewModal },
   { button: closeButtonQuote, modal: quoteModal },
+  { button: closeButtonFAQs, modal: faqsModal },
   { button: closeButtonTopBooking, modal: bookingModal },
   { button: closeButtonTopReview, modal: reviewModal },
   { button: closeButtonTopQuote, modal: quoteModal },
+  { button: closeButtonTopFAQs, modal: faqsModal },
 ];
 
 // Add event listeners for all close buttons

@@ -28,7 +28,7 @@
         </p>
       </div>
       <nav>
-        <a href="#" id="getQuoteButton">Get a Quote</a>
+        <a href="#" id="quoteModalButton">Get a Quote</a>
         <a href="booking.html">Booking Request</a>
         <a href="pages/faq.html">FAQ</a>
         <a href="pages/review.html">Reviews</a>

@@ -382,12 +382,14 @@ input[type="radio"] {
   color: var(--highlight-color);
 }
 
-#reviewModal {
+#reviewModal,
+#faqsModal {
   justify-content: center;
   align-items: center;
 }
 
-.review {
+.review,
+.question {
   margin-bottom: 1em;
   border-bottom: 1px solid #ddd;
   padding-bottom: 0.5em;
