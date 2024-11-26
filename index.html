@@ -122,13 +122,36 @@
     <footer>
       <div class="footer-content">
         <div class="contact-info">
-          <p class="footer-title">Contact Us</p>
-          <p><span>📍</span> Kamloops, BC, Canada</p>
-          <p><span>📞</span> (250) 682-73-85</p>
-          <p><span>✉️</span> cheekyfaceskamloops@gmail.com</p>
+          <h3 class="footer-title">Contact Us</h3>
+          <!-- Interactive Location -->
+          <p id="locationToggle" class="location-text">
+            <span>📍</span>
+            <span>Kamloops, BC, Canada</span>
+          </p>
+          <div id="mapContainer" class="map-container" style="display: none">
+            <iframe
+              class="responsive-iframe"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d161588.72983970447!2d-120.2987295!3d50.7417549!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9f1233306f1a06f%3A0x38ff4246eeaec576!2sCheeky%20Faces%20-%20Face%20Painting!5e0!3m2!1sen!2sca!4v1732258405246!5m2!1sen!2sca"
+              width="100%"
+              height="200"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          <!-- Interactive Email -->
+          <p>
+            <i class="fas fa-envelope envelope-icon"></i>
+            <a href="mailto:cheekyfaceskamloops@gmail.com"
+              >cheekyfaceskamloops@gmail.com</a
+            >
+          </p>
         </div>
+
         <div class="social-media">
-          <p class="footer-title">Follow Us</p>
+          <h3 class="footer-title">Follow Us</h3>
           <p>
             <i class="fab fa-facebook-f"></i>
             <a

@@ -23,6 +23,8 @@ const closeButtonFAQs = document.getElementById("closeButtonFAQs");
 const closeButtonTopFAQs = document.getElementById("closeButtonTopFAQs");
 const faqsModal = document.getElementById("faqsModal");
 const faqQuestions = document.querySelectorAll(".faq-question");
+const locationToggle = document.querySelector(".location-text");
+const mapContainer = document.querySelector(".map-container");
 const modals = [quoteModal, bookingModal, reviewModal, faqsModal];
 
 // Function to open modal
@@ -46,6 +48,14 @@ const openButtons = [
   { button: quoteModalButton, modal: quoteModal },
   { button: faqsModalButton, modal: faqsModal },
 ];
+
+// Toggle footer map display
+locationToggle.addEventListener("click", () => {
+  mapContainer.style.display =
+    mapContainer.style.display === "none" || !mapContainer.style.display
+      ? "block"
+      : "none";
+});
 
 // Add event listeners for all open buttons
 openButtons.forEach(({ button, modal }) => {

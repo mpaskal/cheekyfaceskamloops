@@ -218,6 +218,7 @@ footer {
   align-items: start;
   text-align: left;
   padding: 0 1em;
+  font-size: 1em;
 }
 
 .contact-info p,
@@ -227,17 +228,47 @@ footer {
   margin: 0.3em 0;
 }
 
+.envelope-icon {
+  color: var(--highlight-color); /* Your pink highlight color */
+  margin-right: 0.5em; /* Add spacing between icon and text */
+}
+
 .footer-title {
   font-weight: bold;
   color: var(--menu-text);
-  margin-bottom: 0.5em;
 }
 
 .contact-info span,
 .social-media i {
   margin-right: 0.5em;
-  font-size: 1.2em;
+  font-size: 1em;
   color: var(--highlight-color);
+}
+
+.location-text {
+  cursor: pointer;
+  color: var(--menu-text);
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.location-text:hover {
+  text-decoration: underline;
+  color: var(--highlight-color);
+}
+
+.map-container {
+  display: none; /* Initially hidden */
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+.map-container iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 200px;
+  border-radius: 8px;
+  border: none;
 }
 
 /* Footer Bottom Section */
@@ -258,6 +289,11 @@ footer {
 .footer-bottom a {
   color: var(--menu-text);
   text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+  color: var(--highlight-color);
 }
 
 /* Modal Styling */
@@ -435,7 +471,7 @@ input[type="radio"] {
 @media (max-width: 1024px) {
   .modal-content {
     height: auto;
-    width: 70%;
+    width: 80%;
   }
 }
 
