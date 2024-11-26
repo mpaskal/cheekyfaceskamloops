@@ -99,7 +99,10 @@ h2 {
 }
 
 h3 {
-  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  color: var(--highlight-color);
+  margin: 0;
 }
 
 /* Animation for h2 */
@@ -498,7 +501,7 @@ input[type="radio"] {
 
   .modal-content {
     height: auto;
-    width: 80%;
+    width: 90%;
   }
 
   .radio-group {
