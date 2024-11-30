@@ -80,7 +80,7 @@ header nav a:focus {
   flex-direction: column;
   align-items: center;
   margin: 0.5em auto;
-  width: 80%;
+  width: 70%;
 }
 
 h2 {
@@ -122,11 +122,14 @@ section {
   background-color: var(--primary-background);
   border-radius: 8px;
   margin-bottom: 0.5em;
+  padding: 1em 2em;
+  width: 100%;
 }
 
 /* Paragraph Styling */
 .intro p,
 .greetings p,
+.benefits p,
 .list {
   font-size: clamp(1rem, 1.2vw, 1.2rem);
   line-height: 1.7;
@@ -176,18 +179,22 @@ section {
 }
 
 .image-container img {
-  height: auto;
-  width: 33%;
-  object-fit: fill;
-  object-position: center center;
+  max-height: 20em;
+  max-width: 33%;
+  object-fit: contain;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 0.5em;
-  transition: object-position 0.3s ease, filter 0.3s ease;
+  margin-bottom: 1em;
+}
+
+/* For Safari compatibility */
+@supports (-webkit-appearance: none) {
+  .image-container img {
+    object-fit: contain; /* Fallback for older Safari versions */
+  }
 }
 
 /* Hover Effect */
 .image-container img:hover {
-  object-position: center 30%;
   filter: brightness(1.12);
 }
 
@@ -379,22 +386,37 @@ footer {
 .radio-label {
   display: flex;
   align-items: center;
+  cursor: pointer;
   gap: 0.5em;
   white-space: nowrap;
 }
 
 input[type="radio"] {
-  accent-color: var(--highlight-color);
+  appearance: none; /* Hides default styling */
+  border: 2px solid var(--menu-text);
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--highlight-color);
+  border: 2px solid var(--highlight-color);
 }
 
 /* Input Fields */
 #quoteForm input {
-  width: 30%;
+  font-size: 0.7em;
+  width: auto;
   padding: 0.5em;
   margin-bottom: 0.5em;
   border-radius: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--highlight-color);
   color: var(--menu-text);
+}
+
+#quoteForm input:hover {
+  border: 2px solid var(--highlight-color);
 }
 
 /* Modal Buttons */
@@ -469,9 +491,20 @@ input[type="radio"] {
 }
 
 @media (max-width: 1024px) {
+  .content-wrapper {
+    margin: 0.2em auto;
+    width: 86%;
+  }
+
   .modal-content {
     height: auto;
     width: 80%;
+  }
+
+  .image-container img {
+    max-height: 12em;
+    max-width: 33%;
+    margin-bottom: 0.8em;
   }
 }
 
@@ -512,11 +545,17 @@ input[type="radio"] {
 
   .content-wrapper {
     margin: 0.2em auto;
-    width: 98%;
+    width: 96%;
   }
 
   .image-container {
     margin: 0.2em 0 0.5em 0;
+  }
+
+  .image-container img {
+    max-height: 10em;
+    max-width: 33%;
+    margin-bottom: 0.5em;
   }
 
   .intro p,
@@ -549,5 +588,23 @@ input[type="radio"] {
 
   .radio-label {
     width: 100%;
+  }
+}
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 768px) {
+  .content-wrapper {
+    margin: 0.2em auto;
+    width: 94%;
+  }
+
+  .image-container {
+    margin: 0.2em 0 0.5em 0;
+  }
+
+  .image-container img {
+    max-height: 7em;
+    max-width: 33%;
+    margin-bottom: 0.5em;
   }
 }
