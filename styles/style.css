@@ -118,7 +118,6 @@ h3 {
 }
 
 section {
-  padding: 0.5em;
   background-color: var(--primary-background);
   border-radius: 8px;
   margin-bottom: 0.5em;
@@ -172,25 +171,18 @@ section {
 /* Image Container Styling */
 .image-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
-  margin: 0.5em 0;
-  overflow: hidden;
+  margin: 0.5em 0 1em 0;
 }
 
 .image-container img {
-  max-height: 20em;
-  max-width: calc(33% - 1rem);
-  object-fit: contain;
+  display: flex;
+  height: clamp(23em, 24vh, 26em);
+  -o-object-fit: cover;
+  object-fit: cover;
+  object-position: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1em;
-}
-
-/* For Safari compatibility */
-@supports (-webkit-appearance: none) {
-  .image-container img {
-    object-fit: contain; /* Fallback for older Safari versions */
-  }
+  margin: 0.3em;
 }
 
 /* Hover Effect */
@@ -424,6 +416,7 @@ input[type="radio"]:checked {
   display: flex;
   justify-content: center;
   margin-top: auto;
+  margin-bottom: 0.5em;
 }
 
 .modal-buttons button {
@@ -496,13 +489,18 @@ input[type="radio"]:checked {
     width: 86%;
   }
 
-  .modal-content {
-    height: auto;
-    width: 80%;
+  .section {
+    padding: 0.5em 1em;
   }
 
   .image-container img {
-    margin-bottom: 0.8em;
+    height: clamp(20em, 22vh, 22em);
+    margin: 0.2em;
+  }
+
+  .modal-content {
+    height: auto;
+    width: 80%;
   }
 }
 
@@ -512,15 +510,14 @@ input[type="radio"]:checked {
     width: 86%;
   }
 
+  .image-container img {
+    height: clamp(17em, 20vh, 20em);
+    margin: 0.2em;
+  }
+
   .modal-content {
     height: auto;
     width: 80%;
-  }
-
-  .image-container img {
-    max-height: 12em;
-    max-width: calc(33% - 1rem);
-    margin-bottom: 0.8em;
   }
 }
 
@@ -564,14 +561,9 @@ input[type="radio"]:checked {
     width: 96%;
   }
 
-  .image-container {
-    margin: 0.2em 0 0.5em 0;
-  }
-
   .image-container img {
-    max-height: 12em;
-    max-width: calc(33% - 1rem);
-    margin-bottom: 0.5em;
+    height: clamp(11.5em, 16vh, 17em);
+    margin: 0.1em;
   }
 
   .intro p,
@@ -607,20 +599,16 @@ input[type="radio"]:checked {
   }
 }
 
-/* Responsive Layout for Smaller Screens */
-@media (max-width: 768px) {
-  .content-wrapper {
-    margin: 0.2em auto;
-    width: 94%;
-  }
-
-  .image-container {
-    margin: 0.2em 0 0.5em 0;
-  }
-
+@media (max-width: 500px) {
   .image-container img {
-    max-height: 7em;
-    max-width: calc(33% - 1rem);
-    margin-bottom: 0.5em;
+    height: clamp(7.8em, 13vh, 13em);
+    margin: 0.1em;
+  }
+}
+
+@media (max-width: 400px) {
+  .image-container img {
+    height: clamp(7em, 13vh, 13em);
+    margin: 0.1em;
   }
 }
