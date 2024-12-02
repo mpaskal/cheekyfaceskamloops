@@ -136,6 +136,9 @@ function getSelectedTravelFee() {
 // Calculate button logic to use travel fee radio buttons
 calculateButton.addEventListener("click", () => {
   let quote = 0;
+  const basePrice = 100;
+  const additionalFaceCharge = 5;
+  const numberOfFaces = parseInt(facesNumber.value) || 8;
   const travelFee = getSelectedTravelFee();
 
   const selectedEventType = document.querySelector(
@@ -143,8 +146,10 @@ calculateButton.addEventListener("click", () => {
   ).value;
 
   if (selectedEventType === "birthday") {
-    const faces = parseInt(facesNumber.value) || 8;
-    quote = 100 + (faces - 8) * 5;
+    quote = basePrice;
+    if (numberOfFaces > 8) {
+      quote += (numberOfFaces - 8) * additionalFaceCharge;
+    }
   } else {
     const hours = parseInt(document.getElementById("hours").value) || 1;
     quote = hours * 100;
