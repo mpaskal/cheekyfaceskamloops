@@ -192,13 +192,16 @@ section {
 
 /* iframe */
 .customer-reviews,
-.responsive-iframe {
+.responsive-iframe,
+#quoteForm,
+.faqs {
   width: auto;
   height: auto;
   border: 0;
   margin-bottom: 0.5em;
   flex-grow: 1;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Footer  */
@@ -333,6 +336,7 @@ footer {
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Modal Title */
